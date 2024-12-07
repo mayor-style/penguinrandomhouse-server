@@ -12,8 +12,6 @@ const userRoute = require("./routes/userRoute");
 
 const app = express();
 
-app.use("/api/v1", userRoute);
-
 // Ensure the uploads directory exists
 const uploadDir = path.join(__dirname, "uploads"); // Using relative path
 
