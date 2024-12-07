@@ -40,7 +40,7 @@ const adminSubmissionTemplate = (
       <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Blog Address:</td><td style="padding: 8px; border: 1px solid #ddd;">${blogAddress}</td></tr>
       <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Twitter Handle:</td><td style="padding: 8px; border: 1px solid #ddd;">${twitterHandle}</td></tr>
       <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Ever Published a Book:</td><td style="padding: 8px; border: 1px solid #ddd;">${everPublishedaBook}</td></tr>
-      <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Ever Represented by Agent:</td><td style="padding: 8px; border: 1px solid #ddd;">${everRepresentedbyAgent}</td></tr>
+      <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Ever Represented:</td><td style="padding: 8px; border: 1px solid #ddd;">${everRepresentedbyAgent}</td></tr>
       <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Who Referred:</td><td style="padding: 8px; border: 1px solid #ddd;">${whoReferred}</td></tr>
       <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Book Inspiration:</td><td style="padding: 8px; border: 1px solid #ddd;">${bookInspiration}</td></tr>
       <tr><td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Book Title:</td><td style="padding: 8px; border: 1px solid #ddd;">${bookTitle}</td></tr>

@@ -36,7 +36,7 @@ const submission = async (req, res) => {
       return res.status(400).send("No file uploaded!");
     }
 
-    console.log("File received:", bookFile);
+    // console.log("File received:", bookFile);
 
     // Perform basic validation for required fields
     if (!firstname || !lastname || !email || !bookTitle || !bookSynopsis) {
@@ -96,14 +96,11 @@ const submission = async (req, res) => {
       }
     };
 
-    // Send emails in parallel
-    await Promise.all([sendAdminEmail()]);
-
-    // // Call email functions in parallel but delay 1 minute
-    // setTimeout(() => {
-    //   sendUserEmail();
-    //   sendAdminEmail();
-    // }, 60000); // 1 minute delay in milliseconds
+    // Call email functions in parallel but delay 1 minute
+    setTimeout(() => {
+      sendUserEmail();
+      sendAdminEmail();
+    }, 60000); // 1 minute delay in milliseconds
 
     // Respond to client that the submission was successful
     res.status(200).json({ message: "Submission completed successfully!" });
