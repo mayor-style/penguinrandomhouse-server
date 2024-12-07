@@ -35,6 +35,7 @@ const upload = multer({ storage });
 
 // Middleware setup
 app.use(cors());
+app.use(cors({ origin: "https://penguinrandomhouse-submission.vercel.app" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -43,6 +44,10 @@ const port = process.env.PORT || 3000; // Default to port 3000 if not set in .en
 
 // Use the upload middleware for file handling and userRoute for API logic
 app.use("/api/v1", upload.single("bookFile"), userRoute);
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the backend!');
+});
 
 // Route for downloading the file
 app.get("/download/:filename", (req, res) => {
