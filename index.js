@@ -10,6 +10,8 @@ dotenv.config();
 
 const userRoute = require("./routes/userRoute");
 
+app.use("/api/v1", userRoute);
+
 const app = express();
 
 // Ensure the uploads directory exists
@@ -45,8 +47,8 @@ const port = process.env.PORT || 3000; // Default to port 3000 if not set in .en
 // Use the upload middleware for file handling and userRoute for API logic
 app.use("/api/v1", upload.single("bookFile"), userRoute);
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the backend!');
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend!");
 });
 
 // Route for downloading the file
