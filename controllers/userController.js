@@ -62,7 +62,7 @@ const submission = async (req, res) => {
     };
 
     // Email to admin with delay
-    const adminEmail = "adeleke21l4l@gmail.com";
+    const adminEmail = "Slickoutlaw001@gmail.com";
     const adminMailTitle = "Penguin Random House: New Book Submission Received";
     const adminMailBody = adminSubmissionTemplate(
       firstname,
