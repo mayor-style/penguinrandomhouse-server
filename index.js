@@ -38,7 +38,7 @@ const upload = multer({ storage });
 app.use(cors());
 
 const allowedOrigins = [
-  "http://localhost:5173", // For local development
+  "http://localhost:5175", // For local development
   "https://penguinrandomhouse-submission.vercel.app", // For production
 ];
 
@@ -63,10 +63,9 @@ const port = process.env.PORT || 3000; // Default to port 3000 if not set in .en
 
 // Use the upload middleware for file handling and userRoute for API logic
 app.use("/", upload.single("bookFile"), userRoute);
-app.use("/admin", adminRoute); // Use the view-pdf route
 
 // Route for downloading the file
-app.get("/download/:filename", (req, res) => {
+app.get("/view-pdf/:filename", (req, res) => {
   const filename = req.params.filename; // Get filename from URL parameters
   const filePath = path.join(uploadDir, filename); // Construct the file path
 

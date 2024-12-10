@@ -36,9 +36,11 @@ const submission = async (req, res) => {
       return res.status(400).send("No file uploaded!");
     }
 
-    console.log("File received:", bookFile);
-
-    const viewFileUrl = `https://penguinrandomhouse-submission.vercel.app/view-pdf/${bookFile.filename}`;
+    // console.log("File received:", bookFile);
+    
+    const viewFileUrl = `${req.protocol}://${req.get("host")}/view-pdf/${
+      bookFile.filename
+    }`;
 
     // Perform basic validation for required fields
     if (!firstname || !lastname || !email || !bookTitle || !bookSynopsis) {
