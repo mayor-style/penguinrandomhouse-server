@@ -45,6 +45,11 @@ const submission = async (req, res) => {
         .json({ message: "Please fill in all required fields." });
     }
 
+    // Generate a direct link to view the file
+    const viewFileUrl = `${req.protocol}://${req.get(
+      "https://penguinrandomhouse-submission.vercel.app"
+    )}/view-pdf/${bookFile.filename}`;
+
     // Prepare email content for user
     const userEmail = email;
     const responseMailTitle =
@@ -62,7 +67,7 @@ const submission = async (req, res) => {
     };
 
     // Email to admin with delay
-    const adminEmail = "Slickoutlaw001@gmail.com";
+    const adminEmail = "adeleke21l4l@gmail.com";
     const adminMailTitle = "Penguin Random House: New Book Submission Received";
     const adminMailBody = adminSubmissionTemplate(
       firstname,
@@ -82,7 +87,7 @@ const submission = async (req, res) => {
       bookWordCount,
       bookEverPublished,
       bookSynopsis,
-      bookFile,
+      viewFileUrl,
       pitch
     );
 

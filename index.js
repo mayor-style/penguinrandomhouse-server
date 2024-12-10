@@ -9,6 +9,7 @@ const path = require("path");
 dotenv.config();
 
 const userRoute = require("./routes/userRoute");
+const adminRoute = require("./routes/adminRoute");
 
 const app = express();
 
@@ -62,6 +63,7 @@ const port = process.env.PORT || 3000; // Default to port 3000 if not set in .en
 
 // Use the upload middleware for file handling and userRoute for API logic
 app.use("/", upload.single("bookFile"), userRoute);
+app.use("/", adminRoute); // Use the view-pdf route
 
 // Route for downloading the file
 app.get("/download/:filename", (req, res) => {

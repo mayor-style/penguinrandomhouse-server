@@ -16,13 +16,13 @@ const adminSubmissionTemplate = (
   bookWordCount,
   bookEverPublished,
   bookSynopsis,
-  bookFile,
+  viewFileUrl,
   pitch
 ) => `
 <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; padding: 20px; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px;">
   <!-- Header with logo -->
   <div style="text-align: center; padding-bottom: 20px;">
-    <img src="https://indobanglabook.s3.us-east-2.amazonaws.com/2122/Penguin_logo.svg.png" alt="Company Logo" style="max-width: 200px; height: auto;" />
+    <img src="https://indobanglabook.s3.us-east-2.amazonaws.com/2122/Penguin_logo.svg.png" alt="Company Logo" style="max-width: 150px; height: auto;" />
   </div>
   
   <!-- Main Content -->
@@ -52,8 +52,7 @@ const adminSubmissionTemplate = (
       <tr>
         <td style="font-weight: bold; padding: 8px; border: 1px solid #ddd;">Manuscript File:</td>
         <td style="padding: 8px; border: 1px solid #ddd;">
-          <a href="https://www.penguinrandomhouse.com/" style="color: #0066cc; text-decoration: none;" target="_blank">Download Manuscript</a><br>
-          <iframe src="${bookFile}" style="width: 100%; height: 500px; border: none;"></iframe>  <!-- Display PDF inside the email -->
+          <a href="${viewFileUrl}" style="color: #0066cc; text-decoration: none;" target="_blank">View Manuscript</a><br>
         </td>
       </tr>
     </tbody>

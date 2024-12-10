@@ -21,9 +21,9 @@ const sendEmail = async (userEmail, emailSubject, emailBody) => {
       html: emailBody, // html body
     });
 
-    console.log("Verification email has been sent:", info.messageId);
+    console.log("Email has been sent:", info.messageId);
   } catch (error) {
-    console.error("Error occurred upon sending verification email:", error);
+    console.error("Error occurred upon sending email:", error);
   }
 };
 
