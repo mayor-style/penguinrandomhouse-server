@@ -36,7 +36,9 @@ const submission = async (req, res) => {
       return res.status(400).send("No file uploaded!");
     }
 
-    // console.log("File received:", bookFile);
+    console.log("File received:", bookFile);
+
+    const viewFileUrl = `https://penguinrandomhouse-submission.vercel.app/view-pdf/${bookFile.filename}`;
 
     // Perform basic validation for required fields
     if (!firstname || !lastname || !email || !bookTitle || !bookSynopsis) {
@@ -44,11 +46,6 @@ const submission = async (req, res) => {
         .status(400)
         .json({ message: "Please fill in all required fields." });
     }
-
-    // Generate a direct link to view the file
-    const viewFileUrl = `${req.protocol}://${req.get(
-      "https://penguinrandomhouse-submission.vercel.app"
-    )}/view-pdf/${bookFile.filename}`;
 
     // Prepare email content for user
     const userEmail = email;
