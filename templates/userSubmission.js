@@ -4,7 +4,6 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
   <div style="text-align: center; padding-bottom: 20px;">
     <img src="https://indobanglabook.s3.us-east-2.amazonaws.com/2122/Penguin_logo.svg.png" alt="Company Logo" style="max-width: 150px; height: auto;" />
   </div>
-  
   <!-- Main Content -->
   <p style="font-size: 14px; line-height: 1.5;">Dear ${firstname},</p>
   
