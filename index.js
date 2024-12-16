@@ -38,7 +38,7 @@ const upload = multer({ storage });
 app.use(cors());
 
 const allowedOrigins = [
-  "http://localhost:5175", // For local development
+  "http://localhost:5173", // For local development
   "https://penguinrandomhouse-submission.vercel.app", // For production
 ];
 

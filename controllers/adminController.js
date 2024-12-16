@@ -13,7 +13,6 @@ const reviewFeedback = async (req, res) => {
           "Please fill in all required fields: First Name, Book Title, and Email.",
       });
     }
-
     // Prepare email content for the user
     const responseMailTitle =
       "Exciting News – Your Manuscript Has Been Selected!";
