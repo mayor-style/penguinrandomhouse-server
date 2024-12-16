@@ -39,7 +39,7 @@ app.use(cors());
 
 const allowedOrigins = [
   "http://localhost:5173", // For local development
-  "https://penguinrandomhouse-submission.vercel.app", // For production
+  "https://penguinrandomhouse.onrender.com", // For production
 ];
 
 // Set up CORS to accept requests from any of the allowed origins
@@ -78,6 +78,7 @@ app.get("/view-pdf/:filename", (req, res) => {
     res.status(404).send("File not found"); // Handle case where file doesn't exist
   }
 });
+
 
 // Start the server
 app.listen(port, () => console.log(`Server running on port ${port}`));

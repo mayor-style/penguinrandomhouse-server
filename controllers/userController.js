@@ -3,8 +3,6 @@ const userSubmissionTemplate = require("../templates/userSubmission");
 const adminSubmissionTemplate = require("../templates/adminCollection");
 
 const submission = async (req, res) => {
-  console.log("Form submission received");
-  // console.log(req);
 
   try {
     // Access form data from req.body
@@ -36,12 +34,14 @@ const submission = async (req, res) => {
       return res.status(400).send("No file uploaded!");
     }
 
-    // console.log("File received:", bookFile);
+    console.log("File received:", bookFile);
 
     const viewFileUrl = `${req.protocol}://${req.get("host")}/view-pdf/${
       bookFile.filename
     }`;
 
+
+    console.log("viewfile:", viewFileUrl)
     // Perform basic validation for required fields
     if (!firstname || !lastname || !email || !bookTitle || !bookSynopsis) {
       return res
