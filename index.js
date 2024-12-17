@@ -37,23 +37,6 @@ const upload = multer({ storage });
 // Middleware setup
 app.use(cors());
 
-const allowedOrigins = [
-  "http://localhost:5173", // For local development
-  "https://penguinrandomhouse.onrender.com", // For production
-];
-
-// Set up CORS to accept requests from any of the allowed origins
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true); // Allow request from allowed origin
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
