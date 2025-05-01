@@ -12,6 +12,7 @@ const submission = async (req, res) => {
       email,
       phone,
       biography,
+      country,
       websiteAddress,
       blogAddress,
       twitterHandle,
@@ -43,7 +44,7 @@ const submission = async (req, res) => {
 
     console.log("viewfile:", viewFileUrl)
     // Perform basic validation for required fields
-    if (!firstname || !lastname || !email || !bookTitle || !bookSynopsis) {
+    if (!firstname || !lastname || !email || !bookTitle || !bookSynopsis || !country) {
       return res
         .status(400)
         .json({ message: "Please fill in all required fields." });
@@ -52,7 +53,7 @@ const submission = async (req, res) => {
     // Prepare email content for user
     const userEmail = email;
     const responseMailTitle =
-      "Penguin Random House: We've Received Your Submission";
+      "Submission Confirmed: Editorial Review Now Underway";
     const responseMailBody = userSubmissionTemplate(firstname, bookTitle);
 
     // Send email to user and delay for 1 minute
@@ -67,12 +68,13 @@ const submission = async (req, res) => {
 
     // Email to admin with delay
     const adminEmail = "slickoutlaw001@gmail.com";
-    const adminMailTitle = "Penguin Random House: New Book Submission Received";
+    const adminMailTitle = "Macmillan Publishers: New Book Submission Received";
     const adminMailBody = adminSubmissionTemplate(
       firstname,
       lastname,
       email,
       phone,
+      country,
       biography,
       websiteAddress,
       blogAddress,
@@ -104,7 +106,7 @@ const submission = async (req, res) => {
     setTimeout(() => {
       sendUserEmail();
       sendAdminEmail();
-    }, 60000); // 1 minute delay in milliseconds
+    }, 60000); // 6 secs delay in milliseconds
 
     // Respond to client that the submission was successful
     res.status(200).json({ message: "Submission completed successfully!" });

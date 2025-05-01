@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer");
 const env = require("dotenv").config();
+const path = require('path');
+
 
 const sendEmail = async (userEmail, emailSubject, emailBody) => {
   try {
@@ -15,10 +17,18 @@ const sendEmail = async (userEmail, emailSubject, emailBody) => {
     });
 
     const info = await transporter.sendMail({
-      from: { name: "Penguin Random House", address: process.env.MAIL_USER }, // sender address
+      from: { name: "Penguin Random House Editorial Team", address: process.env.MAIL_USER }, // sender address
       to: userEmail, // list of receivers
       subject: emailSubject, // Subject line
       html: emailBody, // html body
+     /**  attachments: [
+        {
+            filename: 'LanaOrndoff_Adaptation_Agreement.pdf',
+            path: path.join(__dirname, 'LanaOrndoff_Adaptation_Agreement.pdf'),
+            contentType: 'application/pdf'
+        }
+    ] 
+        */
     });
 
     console.log("Email has been sent:", info.messageId);

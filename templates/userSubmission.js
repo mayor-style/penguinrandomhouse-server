@@ -1,36 +1,210 @@
-const userSubmissionTemplate = (firstname, bookTitle) => `
-<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; padding: 20px; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px;">
+{/*const userSubmissionTemplate = (firstname, bookTitle) => `
+<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 650px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
   <!-- Header with logo -->
-  <div style="text-align: center; padding-bottom: 20px;">
-    <img src="https://indobanglabook.s3.us-east-2.amazonaws.com/2122/Penguin_logo.svg.png" alt="Company Logo" style="max-width: 120px; height: auto;" />
+  <div style="background-color: #000000; text-align: center; padding: 35px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 130px; height: auto;" />
   </div>
+
   <!-- Main Content -->
-  <p style="font-size: 14px; line-height: 1.5;">Dear ${firstname},</p>
-  
-  <p style="font-size: 14px; line-height: 1.5;">Thank you for submitting your literary work for review and potential publication. We have received your manuscript titled "<strong>${bookTitle}</strong>" and are excited to begin reviewing it.</p>
-  
-  <p style="font-size: 14px; line-height: 1.5;">Our editorial team will thoroughly evaluate your submission, and we aim to provide a response within a reasonable timeframe. Here’s what you can expect:</p>
-  
-  <ul style="font-size: 14px; line-height: 1.5; list-style-type: disc; margin-left: 20px;">
-    <li>Your manuscript will be reviewed carefully by our editorial team.</li>
-    <li>If additional information or revisions are needed, we will contact you directly.</li>
-    <li>You will receive a response regarding the outcome of your submission via email.</li>
-  </ul>
-  
-  <p style="font-size: 14px; line-height: 1.5;">We understand the importance of your work and appreciate your trust in submitting it to us. Please be assured that your manuscript will receive the careful attention it deserves.</p>
+  <div style="padding: 40px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+    <!-- Header Section -->
+    <div style="text-align: center; margin-bottom: 35px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0;">
+      <h1 style="font-size: 22px; color: #000000; margin: 0 0 12px 0; font-weight: 500; letter-spacing: 0.3px;">Submission Received</h1>
+      <p style="font-size: 15px; color: #666; margin: 0; font-weight: 300;">Thank you for sharing your work with us</p>
+    </div>
 
-  <p style="font-size: 14px; line-height: 1.5;">If you have any further questions or would like to get in touch, feel free to contact us anytime.</p>
+    <!-- Greeting -->
+    <p style="font-size: 16px; line-height: 1.6; margin-bottom: 25px; color: #444;">Dear ${firstname},</p>
 
-  <p style="font-size: 14px; line-height: 1.5;">Best regards,<br />
-  <strong>The Editorial Team</strong><br />
-  <a href="https://www.penguinrandomhouse.com" style="color: #0066cc; text-decoration: none;">Penguin Random House</a></p>
+    <!-- Manuscript Title Section -->
+    <div style="background-color: #f9f9f9; border-left: 3px solid #000000; padding: 22px; margin-bottom: 30px; border-radius: 0 4px 4px 0;">
+      <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px 0; color: #555;">We're pleased to confirm receipt of your manuscript:</p>
+      <h2 style="font-size: 19px; margin: 0; color: #222; text-align: center; font-style: italic; font-weight: 500;">"${bookTitle}"</h2>
+    </div>
 
-  <!-- Footer Section -->
-  <footer style="margin-top: 30px; font-size: 12px; color: #777; text-align: center; border-top: 1px solid #ddd; padding-top: 10px;">
-    <p style="font-size: 12px; color: #777;">This is an automated email. Please do not reply directly to this message. If you need assistance, please <a href="https://www.penguinrandomhouse.com" style="color: #0066cc;">contact our support team</a>.</p>
-    <p>&copy; ${new Date().getFullYear()} Penguin Random House. All rights reserved.</p>
-  </footer>
+    <!-- Thank You Message -->
+    <p style="font-size: 15px; line-height: 1.7; margin-bottom: 30px; color: #444;">At Macmillan Publishers, we understand the dedication and creativity that goes into crafting a manuscript. We appreciate you entrusting us with your work.</p>
+
+    <!-- Process Section -->
+    <div style="margin: 35px 0; width:100%;">
+      <h3 style="font-size: 17px; color: #000000; margin-bottom: 20px; font-weight: 500; letter-spacing: 0.2px;">What Happens Next</h3>
+
+      <!-- Step 1 -->
+      <div style="display: flex; margin-bottom: 22px; align-items: flex-start;">
+        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;"></div>
+        <div>
+          <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">Initial Review</h4>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">Our editorial team will assess your manuscript for potential fit with our current publishing program.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="display: flex; margin-bottom: 22px; align-items: flex-start;">
+        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;"></div>
+        <div>
+          <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">Detailed Evaluation</h4>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">If selected for further review, our editors will examine your work more thoroughly for market potential and literary merit.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="display: flex; align-items: flex-start;">
+        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;"></div>
+        <div>
+          <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">Decision & Feedback</h4>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">We'll contact you with our decision, which may include an offer for publication or constructive feedback on your work.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline Box -->
+    <div style="background-color: #f8f8f8; border-radius: 6px; padding: 22px 25px; margin: 35px 0; border: 1px solid #f0f0f0;">
+      <h3 style="font-size: 16px; color: #000000; margin-top: 0; margin-bottom: 10px; font-weight: 500;">Estimated Response Time</h3>
+      <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #444;">Due to the volume of submissions we receive, our review process typically takes <strong>2-5 business days</strong>. We appreciate your patience during this time.</p>
+    </div>
+
+    <!-- Additional Info -->
+    <p style="font-size: 15px; line-height: 1.6; color: #444; margin-bottom: 15px;">For answers to common questions, please visit our <a href="https://us.macmillan.com/authors" style="color: #000000; text-decoration: none; border-bottom: 1px solid #000000; padding-bottom: 1px;">Author FAQ</a>.</p>
+
+    <p style="font-size: 15px; line-height: 1.6; color: #444; margin: 25px 0;">We look forward to exploring your work and will be in touch soon.</p>
+
+    <!-- Signature -->
+    <div style="margin-top: 35px;">
+      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 5px; color: #444;">Warm regards,</p>
+      <p style="font-size: 15px; line-height: 1.6; margin-top: 0;">
+        <strong style="color: #222;">The Editorial Team</strong><br />
+        <span style="color: #666; font-size: 14px;">Macmillan Publishers</span>
+      </p>
+    </div>
+
+    <!-- CTA Button -->
+    <div style="text-align: center; margin: 45px 0 10px;">
+      <a href="https://us.macmillan.com/authors/resources" style="display: inline-block; background-color: #000000; color: #ffffff; font-weight: 500; padding: 12px 28px; text-decoration: none; border-radius: 4px; font-size: 14px; letter-spacing: 0.3px;">Author Resources</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: #f5f5f5; padding: 25px 20px; text-align: center; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top: 1px solid #eaeaea;">
+    <!-- Social Links -->
+    <div style="margin-bottom: 20px;">
+      <a href="https://twitter.com/macmillanusa" style="display: inline-block; margin: 0 12px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 500;">Twitter</a>
+      <a href="https://www.instagram.com/macmillanusa" style="display: inline-block; margin: 0 12px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 500;">Instagram</a>
+      <a href="https://www.facebook.com/MacmillanUSA" style="display: inline-block; margin: 0 12px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 500;">Facebook</a>
+    </div>
+    
+    <!-- Copyright -->
+    <div style="font-size: 12px; color: #777; text-align: center; padding-top: 15px; border-top: 1px solid #eaeaea;">
+      <p style="margin-bottom: 8px;">This is an automated message. Please do not reply directly to this email.</p>
+      <p style="margin: 0;">&copy; ${new Date().getFullYear()} Macmillan Publishers LLC. All rights reserved.</p>
+    </div>
+  </div>
 </div>
 `;
+
+module.exports = userSubmissionTemplate;*/}
+
+const userSubmissionTemplate = (firstname, bookTitle) => `
+<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 650px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+  <!-- Header with logo -->
+  <div style="background-color: #000000; text-align: center; padding: 35px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 130px; height: auto; background-color:#010101; padding:7px; border-radius:6px; " />
+  </div>
+
+  <!-- Main Content -->
+  <div style="padding: 40px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+    <!-- Header Section -->
+    <div style="text-align: center; margin-bottom: 35px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0;">
+      <h1 style="font-size: 22px; color: #000000; margin: 0 0 12px 0; font-weight: 500; letter-spacing: 0.3px;">Your Submission Has Been Received</h1>
+      <p style="font-size: 15px; color: #666; margin: 0; font-weight: 300;">Thank you for sharing your work with us.</p>
+    </div>
+
+    <!-- Greeting -->
+    <p style="font-size: 16px; line-height: 1.6; margin-bottom: 25px; color: #444;">Dear ${firstname},</p>
+
+    <!-- Manuscript Title Section -->
+    <div style="background-color: #f9f9f9; border-left: 3px solid #000000; padding: 22px; margin-bottom: 30px; border-radius: 0 4px 4px 0;">
+      <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px 0; color: #555;">We’re honored to confirm receipt of your manuscript:</p>
+      <h2 style="font-size: 19px; margin: 0; color: #222; text-align: center; font-style: italic; font-weight: 500;">"${bookTitle}"</h2>
+    </div>
+
+    <!-- Thank You Message -->
+    <p style="font-size: 15px; line-height: 1.7; margin-bottom: 30px; color: #444;">At Macmillan Publishers, we recognize what it means to entrust someone with your creative work. Every manuscript represents not just effort, but vision, vulnerability, and the potential to shape lives. Thank you for placing that trust in us.</p>
+
+    <!-- Process Section -->
+    <div style="margin: 35px 0; width:100%;">
+      <h3 style="font-size: 17px; color: #000000; margin-bottom: 20px; font-weight: 500; letter-spacing: 0.2px;">What Happens Next</h3>
+
+      <!-- Step 1 -->
+      <div style="display: flex; margin-bottom: 22px; align-items: flex-start;">
+        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;">1</div>
+        <div>
+          <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">Initial Review</h4>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">Our editorial team will review your manuscript to assess alignment with our current publishing focus and audience interests.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="display: flex; margin-bottom: 22px; align-items: flex-start;">
+        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;">2</div>
+        <div>
+          <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">Editorial Evaluation</h4>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">If shortlisted, your manuscript will be evaluated for its literary merit, originality, and market potential by a senior editor.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="display: flex; align-items: flex-start;">
+        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;">3</div>
+        <div>
+          <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">Outcome & Next Steps</h4>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">You will receive an email from us with either a publishing offer or carefully considered feedback to support your continued journey.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline Box -->
+    <div style="background-color: #f8f8f8; border-radius: 6px; padding: 22px 25px; margin: 35px 0; border: 1px solid #f0f0f0;">
+      <h3 style="font-size: 16px; color: #000000; margin-top: 0; margin-bottom: 10px; font-weight: 500;">Estimated Response Time</h3>
+      <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #444;">Our typical response time is <strong>2–5 business days</strong>. If additional consideration is required, we’ll keep you informed. Your time—and trust—matter deeply to us.</p>
+    </div>
+
+    <!-- Additional Info -->
+    <p style="font-size: 15px; line-height: 1.6; color: #444; margin-bottom: 15px;">For general queries and useful insights, you can visit our <a href="https://us.macmillan.com/authors" style="color: #000000; text-decoration: none; border-bottom: 1px solid #000000; padding-bottom: 1px;">Author FAQ</a>.</p>
+
+    <p style="font-size: 15px; line-height: 1.6; color: #444; margin: 25px 0;">We look forward to spending time with your work and will be in touch with the next step soon.</p>
+
+    <!-- Signature -->
+    <div style="margin-top: 35px;">
+      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 5px; color: #444;">Warmly,</p>
+      <p style="font-size: 15px; line-height: 1.6; margin-top: 0;">
+        <strong style="color: #222;">The Editorial Team</strong><br />
+        <span style="color: #666; font-size: 14px;">Macmillan Publishers</span>
+      </p>
+    </div>
+
+    <!-- CTA Button -->
+    <div style="text-align: center; margin: 45px 0 10px;">
+      <a href="https://us.macmillan.com/authors/resources" style="display: inline-block; background-color: #000000; color: #ffffff; font-weight: 500; padding: 12px 28px; text-decoration: none; border-radius: 4px; font-size: 14px; letter-spacing: 0.3px;">Explore Author Resources</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: #f5f5f5; padding: 25px 20px; text-align: center; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top: 1px solid #eaeaea;">
+    <!-- Social Links -->
+    <div style="margin-bottom: 20px;">
+      <a href="https://twitter.com/macmillanusa" style="display: inline-block; margin: 0 12px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 500;">Twitter</a>
+      <a href="https://www.instagram.com/macmillanusa" style="display: inline-block; margin: 0 12px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 500;">Instagram</a>
+      <a href="https://www.facebook.com/MacmillanUSA" style="display: inline-block; margin: 0 12px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 500;">Facebook</a>
+    </div>
+
+    <!-- Copyright -->
+    <div style="font-size: 12px; color: #777; text-align: center; padding-top: 15px; border-top: 1px solid #eaeaea;">
+      <p style="margin-bottom: 8px;">This is an automated message. Please do not reply directly to this email.</p>
+      <p style="margin: 0;">&copy; ${new Date().getFullYear()} Macmillan Publishers LLC. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+`;
+
 
 module.exports = userSubmissionTemplate;
