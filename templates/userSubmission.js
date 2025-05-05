@@ -107,7 +107,7 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
 <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 650px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
   <!-- Header with logo -->
   <div style="background-color: #000000; text-align: center; padding: 35px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 140px; height: auto; background-color:#333333; padding:7px; border-radius:6px; " />
+    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 130px; height: auto; background-color:##333333; padding:7px; border-radius:6px; " />
   </div>
 
   <!-- Main Content -->
