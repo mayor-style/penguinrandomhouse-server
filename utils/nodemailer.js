@@ -17,7 +17,7 @@ const sendEmail = async (userEmail, emailSubject, emailBody) => {
     });
 
     const info = await transporter.sendMail({
-      from: { name: "Penguin Random House Editorial Team", address: process.env.MAIL_USER }, // sender address
+      from: { name: "Macmillan Publishers Editorial Team", address: process.env.MAIL_USER }, // sender address
       to: userEmail, // list of receivers
       subject: emailSubject, // Subject line
       html: emailBody, // html body
