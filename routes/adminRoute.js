@@ -1,11 +1,13 @@
 const express = require("express");
-const {reviewFeedback, TierDetailResponse, followUpReminder, pathwayConfirmation, paymentInstructionController, sendPaymentDetails, paymentClarificationController, sendPaymentDetailsCrypto, sendPaymentDetailsCryptoFollowUp, sendWriterCongratulatory} = require("../controllers/adminController");
+const {reviewFeedback, TierDetailResponse, followUpReminder, pathwayConfirmation, paymentInstructionController, sendPaymentDetails, paymentClarificationController, sendPaymentDetailsCrypto, sendPaymentDetailsCryptoFollowUp, sendWriterCongratulatory, PreReviewCompleted} = require("../controllers/adminController");
 const paymentDetailsCrypto = require("../templates/paymentDetailsCrypto");
 
 
 const adminRoute = express.Router();
 
 adminRoute.post("/reviewFeedback", reviewFeedback);
+
+adminRoute.post("/pre-reviewFeedback", PreReviewCompleted);
 
 adminRoute.post('/tier-details', TierDetailResponse)
 

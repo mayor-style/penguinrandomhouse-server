@@ -54,6 +54,67 @@
 </div>
 `;*/}
 
+const followUpNoResponse = (firstname, bookTitle) =>
+  `<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 650px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <!-- Header -->
+    <div style="background-color: #000000; text-align: center; padding: 30px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+      <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 140px; height: auto;" />
+    </div>
+  
+    <!-- Alert Banner -->
+    <div style="background-color: #fff3cd; color: #856404; text-align: center; padding: 15px 20px; border-bottom: 1px solid #ffeeba;">
+      <h2 style="margin: 0; font-size: 18px; font-weight: 500;">Final Notice Regarding Your Shortlisting</h2>
+    </div>
+  
+    <!-- Body -->
+    <div style="padding: 40px; background-color: #ffffff;">
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">Dear ${firstname},</p>
+  
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">
+        Three days ago, you were notified that your manuscript <strong style="font-style: italic;">"${bookTitle}"</strong> was shortlisted for strategic internal evaluation. As of this morning, no response has been logged to confirm your interest in proceeding.
+      </p>
+  
+      <div style="background-color: #fff8e5; padding: 20px; margin: 30px 0; border-left: 4px solid #000;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #333;">
+          Due to high-volume final placements this week, we are closing inactive entries and reassigning their slots to manuscripts on standby.
+        </p>
+      </div>
+  
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">
+        If your silence was unintentional—or you're still in consideration mode—this is a courtesy extension to confirm your pathway tier by <strong>11:59PM (GMT) tomorrow</strong>.
+      </p>
+  
+      <p style="font-size: 16px; line-height: 1.6; color: #444;">
+        After this deadline, your internal link will expire and "${bookTitle}" will be removed from this review track without further notice.
+      </p>
+  
+      <h3 style="margin-top: 35px; font-size: 17px; color: #000;">Reminder: Tier Confirmation Options</h3>
+      <ul style="font-size: 16px; color: #444; line-height: 1.8; margin-top: 10px;">
+        <li><strong>$50</strong> – Standard Priority: Queue position locked</li>
+        <li><strong>$100</strong> – Tiered Review: Curator and partner exposure</li>
+        <li><strong>$200</strong> – Executive Signal: Internal scout circulation</li>
+      </ul>
+  
+      <p style="font-size: 16px; line-height: 1.6; color: #444; margin-top: 30px;">
+        To reconfirm your spot, reply to this thread with your selected tier. Payment instructions will follow instantly via secure internal thread.
+      </p>
+  
+      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eaeaea;">
+        <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #444;">Warmly,</p>
+        <p style="font-size: 16px; line-height: 1.6; margin: 5px 0 0; color: #000; font-weight: 500;">The Adaptation Review Board<br/>
+        <span style="font-size: 14px; color: #666; font-weight: normal;">Macmillan Publishers</span></p>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <div style="padding: 25px; font-size: 13px; color: #777; text-align: center; border-top: 1px solid #eaeaea; background-color: #fafafa; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+      <p style="margin-bottom: 15px;">This courtesy window is not automatically renewed.</p>
+      <p style="margin: 0;">&copy; ${new Date().getFullYear()} Macmillan Publishers LLC. All rights reserved.</p>
+    </div>
+  </div>
+  `
+  
+
 const followUpReminder = (firstname, bookTitle) => `
 <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; padding: 10px; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px;">
   <!-- Header with logo -->

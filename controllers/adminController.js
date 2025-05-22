@@ -9,6 +9,7 @@ const paymentClarification = require("../templates/paymentClarification");
 const paymentDetailCrypto = require("../templates/paymentDetailsCrypto");
 const paymentDetailCryptoFollowUp = require("../templates/paymentDetailCryptoFollowUp");
 const WriterCongratulate = require("../templates/WriterCongratulatory");
+const PrereviewCompleted = require("../templates/PreReviewComplete");
 
 exports.reviewFeedback = async (req, res) => {
   try {
@@ -24,7 +25,7 @@ exports.reviewFeedback = async (req, res) => {
     }
     // Prepare email content for the user
     const responseMailTitle =
-      "Your Manuscript Has Entered Internal Review – Confirmation Needed";
+      "Exciting News – Your Manuscript Has Been Shortlisted!";
     const responseMailBody = reviewCompleted(firstname, bookTitle);
 
     // Send email to the user
@@ -42,6 +43,39 @@ exports.reviewFeedback = async (req, res) => {
       .json({ message: "An error occurred. Please try again later." });
   }
 };
+
+exports.PreReviewCompleted = async (req, res) => {
+  try {
+    // Destructure form data from req.body
+    const { firstname, bookTitle, email } = req.body;
+
+    // Perform basic validation for required fields
+    if (!firstname || !bookTitle || !email) {
+      return res.status(400).json({
+        message:
+          "Please fill in all required fields: First Name, Book Title, and Email.",
+      });
+    }
+    // Prepare email content for the user
+    const responseMailTitle =
+      "Editorial Note on Your Manuscript";
+    const responseMailBody = PrereviewCompleted(firstname, bookTitle);
+
+    // Send email to the user
+    await sendEmail(email, responseMailTitle, responseMailBody);
+    console.log("pre Review Feedback sent successfully to user");
+
+    // Respond with a success message
+    return res
+      .status(200)
+      .json({ message: `${firstname} pre review feedback sent successfully!` });
+  } catch (error) {
+    console.error("Error during pre-review feedback :", error);
+    return res
+      .status(500)
+      .json({ message: "An error occurred. Please try again later." });
+  }
+}
 
 exports.followUpReminder = async (req, res) => {
   try {
