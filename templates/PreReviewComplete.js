@@ -3,8 +3,8 @@ const PrereviewCompleted = (firstname, bookTitle) =>
 `<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 650px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
 
   <!-- Header -->
-  <div style="background-color: #000000; text-align: center; padding: 30px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 130px; height: auto; background-color:##333333; padding:7px; border-radius:6px; " />
+  <div style=" text-align: center; padding: 30px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 200px; height: auto;  padding:7px; border-radius:6px; " />
   </div>
 
   <!-- Highlight Banner -->
@@ -31,11 +31,11 @@ const PrereviewCompleted = (firstname, bookTitle) =>
     </p>
 
     <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 25px;">
-      In your case, what emerged wasn’t just technical merit — it was a certain *instinctive resonance*, something we classify under “Discovery-Grade Potential.” This label is rare, informal, and typically reserved for manuscripts that trigger spontaneous cross-team interest.
+      In your case, what emerged wasn’t just technical merit... it was a certain *instinctive resonance*, something we classify under “Discovery-Grade Potential.” This label is rare, informal, and typically reserved for manuscripts that trigger spontaneous cross-team interest.
     </p>
 
     <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 25px;">
-      We’re preparing the next steps discreetly. Please continue to monitor your inbox over the next few days for further instructions. This is a timed, limited-phase operation — early momentum often defines long-term opportunity.
+      We’re preparing the next steps discreetly. Please continue to monitor your inbox over the next few days for further instructions. This is a timed, limited-phase operation... early momentum often defines long-term opportunity.
     </p>
 
     <p style="font-size: 16px; line-height: 1.6; color: #444;">

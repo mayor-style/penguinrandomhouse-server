@@ -108,7 +108,7 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
 
   <!-- Header with logo -->
   <div style="text-align: center; padding: 35px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 130px; height: auto;  padding:7px; border-radius:6px;" />
+    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 200px; height: auto;  padding:7px; border-radius:6px;" />
   </div>
 
   <!-- Main Content -->
@@ -117,7 +117,7 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
     <!-- Header Section -->
     <div style="text-align: center; margin-bottom: 35px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0;">
       <h1 style="font-size: 22px; color: #000000; margin: 0 0 12px 0; font-weight: 500; letter-spacing: 0.3px;">We’ve Received Your Manuscript</h1>
-      <p style="font-size: 15px; color: #666; margin: 0; font-weight: 300;">And yes — we read every single one.</p>
+      <p style="font-size: 15px; color: #666; margin: 0; font-weight: 300;">And yes... we read every single one.</p>
     </div>
 
     <!-- Greeting -->
@@ -184,6 +184,12 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
         <span style="color: #666; font-size: 14px;">Macmillan Publishers</span>
       </p>
     </div>
+  </div>
+
+   <!-- Footer -->
+  <div style="padding: 25px; font-size: 13px; color: #777; text-align: center; border-top: 1px solid #eaeaea; background-color: #fafafa; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+    <p style="margin-bottom: 15px;">You can reply directly to this email with any questions. Our team is here to help.</p>
+    <p style="margin: 0;">&copy; ${new Date().getFullYear()} Macmillan Publishers LLC. All rights reserved.</p>
   </div>
 </div>
 `;
