@@ -10,6 +10,13 @@ const paymentDetailCrypto = require("../templates/paymentDetailsCrypto");
 const paymentDetailCryptoFollowUp = require("../templates/paymentDetailCryptoFollowUp");
 const WriterCongratulate = require("../templates/WriterCongratulatory");
 const PrereviewCompleted = require("../templates/PreReviewComplete");
+const executivePathwayPrompt = require("../templates/executivePathwayPrompt");
+const prePaymentInfo = require("../templates/prePaymentInfo");
+const paymentRequestTemplate = require("../templates/paymentRequest");
+const paypalGlitchNoticeTemplate = require("../templates/paypalGlitchNoticeTemplate.JS");
+const paypalTagOptionTemplate = require("../templates/paypalTagOptionTemplate");
+const silenceFollowUpTemplate = require("../templates/silenceFollowUp");
+const withdrawalResponseTemplate = require("../templates/withdrawalResponseTemplate");
 
 exports.reviewFeedback = async (req, res) => {
   try {
@@ -47,19 +54,21 @@ exports.reviewFeedback = async (req, res) => {
 exports.PreReviewCompleted = async (req, res) => {
   try {
     // Destructure form data from req.body
-    const { firstname, bookTitle, email } = req.body;
+    const { firstname, bookTitle, email, insightBullets, emotionalAnchor } = req.body;
 
     // Perform basic validation for required fields
-    if (!firstname || !bookTitle || !email) {
+    if (!firstname || !bookTitle || !email ) {
       return res.status(400).json({
         message:
-          "Please fill in all required fields: First Name, Book Title, and Email.",
+          "Please fill in all required fields: First Name, Book Title, Email, insightBullets, and emotionalAnchor.",
       });
     }
     // Prepare email content for the user
     const responseMailTitle =
-      "Editorial Note on Your Manuscript";
-    const responseMailBody = PrereviewCompleted(firstname, bookTitle);
+    // "Internal Note from Macmillan: What Surfaced in Your Manuscript"
+    // `Editorial Reaction: “${bookTitle}” Triggered a Flag
+      "You Weren’t Supposed to Get This Yet";
+    const responseMailBody = PrereviewCompleted(firstname, bookTitle, insightBullets, emotionalAnchor);
 
     // Send email to the user
     await sendEmail(email, responseMailTitle, responseMailBody);
@@ -179,10 +188,10 @@ exports.TierDetailResponse = async (req, res) => {
 exports.paymentInstructionController = async (req, res) => {
   try {
     // Destructure form data from req.body
-    const { firstname, bookTitle, email, chosenPathway } = req.body;
+    const { firstname, bookTitle, email, chosenPathway, price } = req.body;
 
     // Perform basic validation for required fields
-    if (!firstname || !bookTitle || !email || !chosenPathway) {
+    if (!firstname || !bookTitle || !email || !chosenPathway || !price) {
       return res.status(400).json({
         message:
           "Please fill in all required fields: First Name, Book Title, Email, and Chosen Pathway.",
@@ -190,8 +199,8 @@ exports.paymentInstructionController = async (req, res) => {
     }
 
     // Prepare email content
-    const mailSubject = "Next Steps: Payment Instructions for Your Manuscript Development";
-    const mailBody = paymentInstructions(firstname, bookTitle, chosenPathway);
+    const mailSubject = `[Activation Window] Executive Development Pathway – ${firstname}`;
+    const mailBody = paymentInstructions(firstname, bookTitle, chosenPathway, price);
 
     // Send email
     await sendEmail(email, mailSubject, mailBody);
@@ -412,3 +421,196 @@ exports.sendWriterCongratulatory = async (req, res) => {
       .json({ message: "An error occurred. Please try again later." });
   }
 };
+
+exports.executivePathway = async (req, res) => {
+  try {
+    const { firstname, bookTitle, email } = req.body;
+
+    if (!firstname || !bookTitle || !email) {
+      return res.status(400).json({
+        message:
+          "Please fill in all required fields: First Name, Book Title, and Email.",
+      });
+    }
+
+    const responseMailTitle = "Quick Confirmation: Executive Pathway Track";
+    const responseMailBody = executivePathwayPrompt(firstname, bookTitle);
+
+    await sendEmail(email, responseMailTitle, responseMailBody);
+    console.log("Executive pathway confirmation sent successfully to user");
+
+    return res.status(200).json({
+      message: `${email} executive pathway confirmation sent successfully!`,
+    });
+  } catch (error) {
+    console.error("Error during executive pathway confirmation:", error);
+    return res.status(500).json({
+      message: "An error occurred. Please try again later.",
+    });
+  }
+};
+
+exports.prePaymentInfo = async (req, res) => {
+  try {
+    const { firstname, email } = req.body;
+
+    if (!firstname || !email) {
+      return res.status(400).json({
+        message: "Please provide both First Name and Email.",
+      });
+    }
+
+    const mailSubject = " Development Pathway — Quick Confirmation Before Your Payment Slot";
+    const mailBody = prePaymentInfo(firstname);
+
+    await sendEmail(email, mailSubject, mailBody);
+    console.log("Development pathway email sent to user");
+
+    return res.status(200).json({
+      message: `Development pathway email sent successfully to ${email}`,
+    });
+  } catch (error) {
+    console.error("Error sending development pathway email:", error);
+    return res.status(500).json({
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+
+exports.paymentRequest = async (req, res) => {
+  try {
+    const { firstname, paypalEmail, email } = req.body;
+
+    if (!firstname || !paypalEmail || !email ) {
+      return res.status(400).json({
+        message: "Please provide First Name, paypal email, and Email.",
+      });
+    }
+
+    const mailSubject = "Final Step to Confirm Your Editorial Pathway";
+    const mailBody = paymentRequestTemplate(firstname, paypalEmail);
+
+    await sendEmail(email, mailSubject, mailBody);
+    console.log("Payment request email sent to user");
+
+    return res.status(200).json({
+      message: `Payment request email sent successfully to ${email}`,
+    });
+  } catch (error) {
+    console.error("Error sending payment request email:", error);
+    return res.status(500).json({
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+exports.paypalGlitchNotice = async (req, res) => {
+  try {
+    const { firstname, email } = req.body;
+
+    if (!firstname || !email) {
+      return res.status(400).json({
+        message: "Please provide both First Name and Email.",
+      });
+    }
+
+    const mailSubject = "Quick Note: PayPal Glitch & Seamless Workaround";
+    const mailBody = paypalGlitchNoticeTemplate(firstname);
+
+    await sendEmail(email, mailSubject, mailBody);
+    console.log("PayPal glitch notice email sent to user");
+
+    return res.status(200).json({
+      message: `Glitch notice email sent successfully to ${email}`,
+    });
+  } catch (error) {
+    console.error("Error sending glitch notice email:", error);
+    return res.status(500).json({
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+
+exports.paypalTagOptionNotice = async (req, res) => {
+  try {
+    const { firstname, email } = req.body;
+
+    if (!firstname || !email) {
+      return res.status(400).json({
+        message: "Please provide both First Name and Email.",
+      });
+    }
+
+    const mailSubject = "One More Smooth Option (Just In Case PayPal’s Still Weird)";
+    const mailBody = paypalTagOptionTemplate(firstname);
+
+    await sendEmail(email, mailSubject, mailBody);
+    console.log("PayPal tag option notice sent");
+
+    return res.status(200).json({
+      message: `Tag-based PayPal workaround email sent successfully to ${email}`,
+    });
+  } catch (error) {
+    console.error("Error sending PayPal tag option email:", error);
+    return res.status(500).json({
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+exports.silenceFollowUp = async (req, res) => {
+  try {
+    const { firstname, bookTitle, email } = req.body;
+
+    if (!firstname || !bookTitle || !email) {
+      return res.status(400).json({
+        message: "Please provide First Name, Book Title, and Email.",
+      });
+    }
+
+    const mailSubject = `Totally fine if you’ve gone quiet... just one thing before we close.`;
+    const mailBody = silenceFollowUpTemplate(firstname, bookTitle);
+
+    await sendEmail(email, mailSubject, mailBody);
+    console.log("Nudge follow-up email sent");
+
+    return res.status(200).json({
+      message: `Nudge email sent successfully to ${email}`,
+    });
+  } catch (error) {
+    console.error("Error sending nudge email:", error);
+    return res.status(500).json({
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+exports.withdrawalResponse = async (req, res) => {
+  try {
+    const { firstname, bookTitle, email } = req.body;
+
+    if (!firstname || !bookTitle || !email) {
+      return res.status(400).json({
+        message: "Please provide First Name, Book Title, and Email.",
+      });
+    }
+
+    const mailSubject = `As requested: ${bookTitle} has been withdrawn - no pressure, no follow-up`;
+    const mailBody = withdrawalResponseTemplate(firstname, bookTitle);
+
+    await sendEmail(email, mailSubject, mailBody);
+    console.log("withdrawal response email sent");
+
+    return res.status(200).json({
+      message: `withdrawal response email sent successfully to ${email}`,
+    });
+  } catch (error) {
+    console.error("Error sending withdrawal response email:", error);
+    return res.status(500).json({
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+

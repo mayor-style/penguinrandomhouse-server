@@ -122,6 +122,9 @@
 
   <!-- Footer Section -->
   <footer style="margin-top: 30px; font-size: 14px; color: #777; text-align: center; border-top: 1px solid #ddd; padding-top: 10px;">
+    <div style="margin-bottom: 15px;">
+      <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 120px; height: auto;" />
+    </div>
     <p style="font-size: 14px; color: #777;">
       If you have any questions, feel free to reply directly to this message. Or, <a href="https://www.penguinrandomhouse.com" style="color: #0066cc;">contact our support team</a> for assistance.
     </p>
@@ -130,3 +133,4 @@
 
 </div>
 `
+  module.exports = pathwayConfirmation;

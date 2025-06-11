@@ -20,23 +20,23 @@ const adminSubmissionTemplate = (
   viewFileUrl,
   pitch
 ) => `
-<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 650px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 700px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
   <!-- Header with logo and background -->
-  <div style="background-color: #000000; text-align: center; padding: 35px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 130px; height: auto;" />
+  <div style=" text-align: center; padding: 35px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 200px; height: auto;" />
   </div>
   
   <!-- Main Content -->
-  <div style="padding: 40px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+  <div style="padding: 25px 15px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
     <h2 style="font-size: 22px; color: #000000; margin-top: 0; margin-bottom: 30px; text-align: center; font-weight: 500; letter-spacing: 0.3px;">New Book Submission</h2>
     
     <!-- Author Information Section -->
     <div style="margin-bottom: 35px; background-color: #ffffff; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-      <div style="padding: 15px 20px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+      <div style="padding: 15px 10px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
         <div style="width: 24px; height: 24px; background-color: #000000; border-radius: 50%; margin-right: 12px;"></div>
         <h3 style="font-size: 16px; color: #000000; margin: 0; font-weight: 500;">Author Information</h3>
       </div>
-      <div style="padding: 20px;">
+      <div style="padding: 10px;">
         <table style="width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.6;">
           <tbody>
             <tr>

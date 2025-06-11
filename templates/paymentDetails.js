@@ -193,3 +193,5 @@ const paymentDetails = (firstname, amount, paypalEmail) => `
 </body>
 </html>
 `;
+
+module.exports = paymentDetails

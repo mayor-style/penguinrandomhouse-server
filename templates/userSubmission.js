@@ -6,7 +6,7 @@
   </div>
 
   <!-- Main Content -->
-  <div style="padding: 40px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+  <div style="padding: 30px 20px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
     <!-- Header Section -->
     <div style="text-align: center; margin-bottom: 35px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0;">
       <h1 style="font-size: 22px; color: #000000; margin: 0 0 12px 0; font-weight: 500; letter-spacing: 0.3px;">Submission Received</h1>
@@ -85,6 +85,11 @@
 
   <!-- Footer -->
   <div style="background-color: #f5f5f5; padding: 25px 20px; text-align: center; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top: 1px solid #eaeaea;">
+    <!-- Logo in Footer -->
+    <div style="margin-bottom: 20px;">
+      <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 120px; height: auto;" />
+    </div>
+    
     <!-- Social Links -->
     <div style="margin-bottom: 20px;">
       <a href="https://twitter.com/macmillanusa" style="display: inline-block; margin: 0 12px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 500;">Twitter</a>
@@ -104,7 +109,7 @@
 module.exports = userSubmissionTemplate;*/}
 
 const userSubmissionTemplate = (firstname, bookTitle) => `
-<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 650px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; max-width: 700px; margin: 0 auto; background-color: #fafafa; border-radius: 8px; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
 
   <!-- Header with logo -->
   <div style="text-align: center; padding: 35px 20px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
@@ -112,7 +117,7 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
   </div>
 
   <!-- Main Content -->
-  <div style="padding: 40px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+  <div style="padding: 20px 15px; background-color: #ffffff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
 
     <!-- Header Section -->
     <div style="text-align: center; margin-bottom: 35px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0;">
@@ -138,7 +143,7 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
 
       <!-- Step 1 -->
       <div style="display: flex; margin-bottom: 22px; align-items: flex-start;">
-        <div style="background-color: #000000; color: white; padding:3px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; height:28px; width:28px; flex-shrink: 0; font-weight: 500; font-size: 14px;">1</div>
+        <div style=" color: white; padding:3px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: 500; font-size: 14px;">1</div>
         <div>
           <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">We Read It</h4>
           <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">Not skim. Not keyword scan. Your manuscript enters a real editorial review queue... handled by real humans who care about language.</p>
@@ -147,7 +152,7 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
 
       <!-- Step 2 -->
       <div style="display: flex; margin-bottom: 22px; align-items: flex-start;">
-        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;">2</div>
+        <div style=" color: white;  border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px;  font-weight: 500; font-size: 14px;">2</div>
         <div>
           <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">We Weigh It</h4>
           <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">If it aligns with our current focus, a senior editor will assess its strength... not just for market fit, but voice, depth, and something harder to name.</p>
@@ -156,7 +161,7 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
 
       <!-- Step 3 -->
       <div style="display: flex; align-items: flex-start;">
-        <div style="background-color: #000000; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; flex-shrink: 0; font-weight: 500; font-size: 14px;">3</div>
+        <div style=" color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px;  font-weight: 500; font-size: 14px;">3</div>
         <div>
           <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #222; font-weight: 500;">You Hear From Us</h4>
           <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #555;">You’ll receive either a formal publishing offer, or feedback that respects your ambition and points your next shot in the right direction.</p>
@@ -188,10 +193,13 @@ const userSubmissionTemplate = (firstname, bookTitle) => `
 
    <!-- Footer -->
   <div style="padding: 25px; font-size: 13px; color: #777; text-align: center; border-top: 1px solid #eaeaea; background-color: #fafafa; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+    <div style="margin-bottom: 15px;">
+      <img src="https://d3ialxc06lvqvq.cloudfront.net/wp-content/uploads/2023/04/27022218/macmillan-logo-red-1-287x64.png" alt="Macmillan Publishers Logo" style="max-width: 120px; height: auto;" />
+    </div>
     <p style="margin-bottom: 15px;">You can reply directly to this email with any questions. Our team is here to help.</p>
     <p style="margin: 0;">&copy; ${new Date().getFullYear()} Macmillan Publishers LLC. All rights reserved.</p>
   </div>
 </div>
 `;
 
-module.exports = userSubmissionTemplate;  
+module.exports = userSubmissionTemplate;
